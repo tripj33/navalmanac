@@ -19,7 +19,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [messageState, setMessageState] = useState<{ messages: Message[], pending?: string, history: [string, string][] }>({
     messages: [{
-      "message": "Hi, I'm an AI assistant for the Almanac of Naval Ravikant. How can I help you?",
+      "message": "Hi, I'm your pathophysiology assistant. How can I help you?",
       "type": "apiMessage"
     }],
     history: []

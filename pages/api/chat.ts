@@ -12,7 +12,7 @@ export default async function handler(
   const body = req.body;
   const dir = path.resolve(process.cwd(), "data");
 
-  const vectorstore = await HNSWLib.load(dir, new OpenAIEmbeddings());
+  const vectorstore = await HNSWLib.load(dir, new OpenAIEmbeddings({openAIApiKey:"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"}));
   res.writeHead(200, {
     "Content-Type": "text/event-stream",
     // Important to set no-transform to avoid compression, which will delay

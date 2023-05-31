@@ -3,7 +3,7 @@ import { OpenAIEmbeddings } from "langchain/embeddings";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { TextLoader } from "langchain/document_loaders";
 
-const FILENAME = "NavalAlmanac.md";
+const FILENAME = "Pathophysiology.txt";
 
 export const run = async () => {
   const loader = new TextLoader(FILENAME);
@@ -19,7 +19,7 @@ export const run = async () => {
 
   console.log("Creating vector store...");
   /* Create the vectorstore */
-  const vectorStore = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings());
+  const vectorStore = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings({openAIApiKey:"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"}));
   await vectorStore.save("data");
 };
 

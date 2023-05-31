@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       sendResponse({ sender: 'bot', message: token, type: 'stream' });
     }
 
-    const chainPromise = HNSWLib.load("data", new OpenAIEmbeddings()).then((vs) => makeChain(vs, onNewToken));
+    const chainPromise = HNSWLib.load("data", new OpenAIEmbeddings({openAIApiKey:"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"})).then((vs) => makeChain(vs, onNewToken));
     const chatHistory: [string, string][] = [];
     const encoder = new TextEncoder();
 
